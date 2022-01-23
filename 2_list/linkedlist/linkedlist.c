@@ -54,13 +54,14 @@ int addLLElement(LinkedList* pList, int position, ListNode element)
 		}
 		else
 		{
-			int pos = position;
-			printf("hello\n");
+			int pos = position - 1;
+			printf("hello %d\n", pos);
 			ListNode *move = &(pList->headerNode);
-			while (--pos)
+			while (--pos > 0)
 			{	
 				move = move->pLink;
 			}
+			printf("hello %d\n", pos);
 			
 			if (pos != 0)
 			{
@@ -70,7 +71,9 @@ int addLLElement(LinkedList* pList, int position, ListNode element)
 			else
 			{
 				printf("hello2\n");
-				move->pLink = Nodetemp->pLink;	
+				move->pLink = Nodetemp ;
+				// Nodetemp->data = element.data;
+				// Nodetemp->pLink = element.pLink;
 			}
 			(pList->currentElementCount)++;
 
