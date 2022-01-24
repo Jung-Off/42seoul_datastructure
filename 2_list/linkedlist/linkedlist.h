@@ -16,18 +16,18 @@ typedef struct LinkedListType
 	ListNode headerNode;		// 헤더 노드(Header Node)
 } LinkedList;
 
-LinkedList* createLinkedList();
+LinkedList* createLinkedList();											//생성하기
 // 헤더 노드만을 가리키는 화살표
-int addLLElement(LinkedList* pList, int position, ListNode element);
+int addLLElement(LinkedList* pList, int position, ListNode element);	//	추가하기
 //					  v
 // 헤더 노드를 처음으로해서 ㅁ-ㅁ-ㅁ-ㅁ
-int removeLLElement(LinkedList* pList, int position);
-ListNode* getLLElement(LinkedList* pList, int position);
+int removeLLElement(LinkedList* pList, int position);					//	지우기
+ListNode* getLLElement(LinkedList* pList, int position);				//	요소 찾기
 
-void clearLinkedList(LinkedList* pList); //노드 다 지우기 List만 남긴다.
-int getLinkedListLength(LinkedList* pList);
+void clearLinkedList(LinkedList* pList);								//	노드 다 지우기 List만 남긴다.
+int getLinkedListLength(LinkedList* pList);								//	길이
 
-void deleteLinkedList(LinkedList* pList); // List를 지운다
+void deleteLinkedList(LinkedList* pList);								//	List를 지운다
 
 
 #endif

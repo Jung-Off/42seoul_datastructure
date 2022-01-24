@@ -37,6 +37,7 @@ int main()
     while (1)
     {
         print_command();
+        
         scanf("%d", &c);
 
         if (c == 1)
