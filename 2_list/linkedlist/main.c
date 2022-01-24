@@ -30,24 +30,72 @@ int main()
     element3.pLink = NULL;
 
     ListNode element4;
-    element3.data = 3;
-    element3.pLink = NULL;
+    element4.data = 3;
+    element4.pLink = NULL;
 
     ListNode element5;
-    element3.data = 4;
-    element3.pLink = NULL;
+    element5.data = 4;
+    element5.pLink = NULL;
 
     addLLElement(head, 0, element1);
-    addLLElement(head, 1, element2);
-    // addLLElement(head, 2, element3);
-    // addLLElement(head, 3, element4);
-    // addLLElement(head, 4, element5);
-
-    ListNode *Node = &(head->headerNode);
-    printf("==%d==\n", head->currentElementCount);
-    while (Node)
-    {
-        printf("[%d]\n", Node->data);
-        Node = Node->pLink;
+    {   
+        ListNode *Node = head->headerNode.pLink;
+        printf("==%d==\n", head->currentElementCount);
+        while (Node)
+        {
+            printf("[%d] -> ", Node->data);
+            Node = Node->pLink;
+        }
+        printf("(NULL)");
+        printf("\n");
     }
+    addLLElement(head, 0, element2);
+    {   
+        ListNode *Node = head->headerNode.pLink;
+        printf("==%d==\n", head->currentElementCount);
+        while (Node)
+        {
+            printf("[%d] -> ", Node->data);
+            Node = Node->pLink;
+        }
+        printf("(NULL)");
+        printf("\n");
+    }
+    addLLElement(head, 0, element3);
+    {   
+        ListNode *Node = head->headerNode.pLink;
+        printf("==%d==\n", head->currentElementCount);
+        while (Node)
+        {
+            printf("[%d] -> ", Node->data);
+            Node = Node->pLink;
+        }
+        printf("(NULL)");
+        printf("\n");
+    }
+    addLLElement(head, 3, element4);
+    {   
+        ListNode *Node = head->headerNode.pLink;
+        printf("==%d==\n", head->currentElementCount);
+        while (Node)
+        {
+            printf("[%d] -> ", Node->data);
+            Node = Node->pLink;
+        }
+        printf("(NULL)");
+        printf("\n");
+    }
+    addLLElement(head, 4, element5);
+    {   
+        ListNode *Node = head->headerNode.pLink;
+        printf("==%d==\n", head->currentElementCount);
+        while (Node)
+        {
+            printf("[%d] -> ", Node->data);
+            Node = Node->pLink;
+        }
+        printf("(NULL)");
+        printf("\n");
+    }
+
 }

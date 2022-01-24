@@ -29,61 +29,45 @@ int addLLElement(LinkedList* pList, int position, ListNode element)
 	Nodetemp->data = element.data;
 	Nodetemp->pLink = element.pLink;
 
-	//원소가 아무것도 없을 때
-
-	if (pList->currentElementCount == 0)
+	ListNode *move;
+	move = &(pList->headerNode);
+	//	1. 처음에 넣을 때
+	if (position == 0)
 	{
-		(pList->currentElementCount)++;
-		pList->headerNode.data = Nodetemp->data;
-		pList->headerNode.pLink = Nodetemp->pLink;
-		return (TRUE);
-	}
-	else
-	{
-		if (position == 0)
+		//	원소가 아무것도 없을 때
+		if (pList->headerNode.pLink == NULL)
 		{
-			ListNode *temp;
-
-			//맨처음거 2번째로 만들기 위해 복사
-			temp->data = pList->headerNode.data;
-			temp->pLink = pList->headerNode.pLink;
-			//맨처음에 넣어주기
-			pList->headerNode.data = Nodetemp->data;
-			pList->headerNode.pLink = temp->pLink;
 			(pList->currentElementCount)++;
+			pList->headerNode.pLink = Nodetemp;
+			return (TRUE);
 		}
+		//	원소가 있는데 넣을 때
 		else
 		{
-			int pos = position - 1;
-			printf("hello %d\n", pos);
-			ListNode *move = &(pList->headerNode);
-			while (--pos > 0)
-			{	
-				move = move->pLink;
-			}
-			printf("hello %d\n", pos);
-			
-			if (pos != 0)
-			{
-				Nodetemp->pLink = move->pLink;
-				move->pLink = Nodetemp;
-			}
-			else
-			{
-				printf("hello2\n");
-				move->pLink = Nodetemp ;
-				// Nodetemp->data = element.data;
-				// Nodetemp->pLink = element.pLink;
-			}
 			(pList->currentElementCount)++;
-
+			Nodetemp->pLink = move->pLink;
+			move->pLink = Nodetemp;
+			return (TRUE);
 		}
-		
-
-
-
-
 	}
+	//	2. 중간에 넣을 때
+	else
+	{
+		int pos = position;
+		(pList->currentElementCount)++;
+
+		while (pos > 0)
+		{
+			move = move->pLink;
+			pos--;
+		}
+
+		Nodetemp->pLink = move->pLink;
+		move->pLink = Nodetemp;
+
+		return (TRUE);
+	}
+	
 
 	//원소가 처음에 넣을 때
 
