@@ -1,101 +1,60 @@
 #include "linkedlist.h"
 
-ListNode* createListNode(int a)
+void print_list(LinkedList *head)
 {
-    ListNode  *Node;
+    ListNode *Node = head->headerNode.pLink;
+    printf("==%d==\n", head->currentElementCount);
+    while (Node)
+    {
+        printf("[%d] -> ", Node->data);
+        Node = Node->pLink;
+    }
+    printf("(NULL)");
+    printf("\n");
+}
 
-    Node = (ListNode *)malloc(sizeof(ListNode));
-    Node->data = a;
-    Node->pLink = NULL;
-
-    return (Node);
+void print_command(void)
+{
+    printf("1. add element\n");
+    printf("2. delete element\n");
+    printf("push command! : ");
 }
 
 int main()
 {
+
     LinkedList *head;
-
+    int c;                  //command
+    int position = 0;       //넣을 위치 받아오는 변수
     head = createLinkedList();
+    ListNode node0 = {0, 0}; //이부분 참고! // data로 무엇을 넣을지 계속 바꿔주는 것! add함수안에서 말록으로 넣어서 지역변수로 재활용해서 사용이 가능!
 
-    ListNode element1;
-    element1.data = 0;
-    element1.pLink = NULL;
+    while (1)
+    {
+        print_command();
+        scanf("%d", &c);
 
-    ListNode element2;
-    element2.data = 1;
-    element2.pLink = NULL;
-
-    ListNode element3;
-    element3.data = 2;
-    element3.pLink = NULL;
-
-    ListNode element4;
-    element4.data = 3;
-    element4.pLink = NULL;
-
-    ListNode element5;
-    element5.data = 4;
-    element5.pLink = NULL;
-
-    addLLElement(head, 0, element1);
-    {   
-        ListNode *Node = head->headerNode.pLink;
-        printf("==%d==\n", head->currentElementCount);
-        while (Node)
+        if (c == 1)
         {
-            printf("[%d] -> ", Node->data);
-            Node = Node->pLink;
-        }
-        printf("(NULL)");
-        printf("\n");
-    }
-    addLLElement(head, 0, element2);
-    {   
-        ListNode *Node = head->headerNode.pLink;
-        printf("==%d==\n", head->currentElementCount);
-        while (Node)
-        {
-            printf("[%d] -> ", Node->data);
-            Node = Node->pLink;
-        }
-        printf("(NULL)");
-        printf("\n");
-    }
-    addLLElement(head, 0, element3);
-    {   
-        ListNode *Node = head->headerNode.pLink;
-        printf("==%d==\n", head->currentElementCount);
-        while (Node)
-        {
-            printf("[%d] -> ", Node->data);
-            Node = Node->pLink;
-        }
-        printf("(NULL)");
-        printf("\n");
-    }
-    addLLElement(head, 3, element4);
-    {   
-        ListNode *Node = head->headerNode.pLink;
-        printf("==%d==\n", head->currentElementCount);
-        while (Node)
-        {
-            printf("[%d] -> ", Node->data);
-            Node = Node->pLink;
-        }
-        printf("(NULL)");
-        printf("\n");
-    }
-    addLLElement(head, 4, element5);
-    {   
-        ListNode *Node = head->headerNode.pLink;
-        printf("==%d==\n", head->currentElementCount);
-        while (Node)
-        {
-            printf("[%d] -> ", Node->data);
-            Node = Node->pLink;
-        }
-        printf("(NULL)");
-        printf("\n");
-    }
+            printf("input data! : ");
+            scanf("%d", &(node0.data));
 
+            printf("input where! : ");
+            scanf("%d", &position);
+
+            addLLElement(head, position, node0);
+            print_list(head);
+        }
+        else if (c == 2)
+        {
+            printf("delete where! : ");
+            scanf("%d", &position);
+
+            removeLLElement(head, position);
+            print_list(head);
+        }
+        else if (c == 0)
+            break;
+    }
+    printf("bye bye\n");
 }
