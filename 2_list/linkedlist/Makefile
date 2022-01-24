@@ -7,6 +7,10 @@ SRCS := main.c \
 	   createLinkedList.c \
 	   addLLElement.c \
 	   removeLLElement.c \
+	   getLinkedListLength.c \
+	   getLLElement.c \
+	   clearLinkedList.c \
+	   deleteLinkedList.c
 	
 OBJ_DIR := ./objs/
 OBJ_NAME := $(SRCS:.c=.o)

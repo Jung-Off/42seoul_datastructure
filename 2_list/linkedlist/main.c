@@ -3,20 +3,25 @@
 void print_list(LinkedList *head)
 {
     ListNode *Node = head->headerNode.pLink;
-    printf("==%d==\n", head->currentElementCount);
+
+
+    printf("\nThis list length : %d\n", getLinkedListLength(head));
+    printf("[head] -> ");
     while (Node)
     {
         printf("[%d] -> ", Node->data);
         Node = Node->pLink;
     }
     printf("(NULL)");
-    printf("\n");
+    printf("\n\n");
 }
 
 void print_command(void)
 {
     printf("1. add element\n");
     printf("2. delete element\n");
+    printf("3. get element\n");
+    printf("4. clear list\n");
     printf("push command! : ");
 }
 
@@ -53,8 +58,32 @@ int main()
             removeLLElement(head, position);
             print_list(head);
         }
+        else if (c == 3)
+        {
+            printf("Where is it? : ");
+            scanf("%d", &position);
+
+            ListNode *node_copy;
+            node_copy = getLLElement(head, position);
+            if (node_copy != NULL)
+            {
+                printf("\n");
+                printf("position    :   %d\n", position);
+                printf("data        :   %d\n", node_copy->data);
+                printf("\n");
+            }
+        }
+        else if(c == 4)
+        {
+            clearLinkedList(head);
+            print_list(head);
+        }
         else if (c == 0)
             break;
     }
+
+    deleteLinkedList(head);
+    head = NULL;
+
     printf("bye bye\n");
 }

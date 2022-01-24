@@ -21,14 +21,13 @@ LinkedList* createLinkedList();
 int addLLElement(LinkedList* pList, int position, ListNode element);
 //					  v
 // 헤더 노드를 처음으로해서 ㅁ-ㅁ-ㅁ-ㅁ
-
-
 int removeLLElement(LinkedList* pList, int position);
 ListNode* getLLElement(LinkedList* pList, int position);
 
-void clearLinkedList(LinkedList* pList);
+void clearLinkedList(LinkedList* pList); //노드 다 지우기 List만 남긴다.
 int getLinkedListLength(LinkedList* pList);
-void deleteLinkedList(LinkedList* pList);
+
+void deleteLinkedList(LinkedList* pList); // List를 지운다
 
 
 #endif
