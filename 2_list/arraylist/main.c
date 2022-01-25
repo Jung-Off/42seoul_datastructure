@@ -40,7 +40,7 @@ int main()
     scanf("%d", &c);
     ArrayList *list = createArrayList(c);
 
-    ArrayListNode node0 = {0};    
+    ArrayListNode input_node = {0};    
     while (1)
     {
         print_command();
@@ -48,12 +48,12 @@ int main()
         if (c == 1)
         {
             printf("input data! : ");
-            scanf("%d", &(node0.data));
+            scanf("%d", &(input_node.data));
 
             printf("input where! : ");
             scanf("%d", &position);
 
-            addALElement(list, position, node0);
+            addALElement(list, position, input_node);
             print_arr(list);
         }
         else if (c == 2)

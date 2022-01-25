@@ -11,7 +11,7 @@ int addALElement(ArrayList* pList, int position, ArrayListNode element)
         sizeof(ArrayListNode) * (pList->currentElementCount - position));
     //  빈자리에 끼워 넣기
     memcpy(&(pList->pElement[position]), &element, sizeof(ArrayListNode));
-
+    //element의 주소에서 sizeof 만큼 position에 붙여 넣기
     pList->currentElementCount++;
     return (TRUE);
 }

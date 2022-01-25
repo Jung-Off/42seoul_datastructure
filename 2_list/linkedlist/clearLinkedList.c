@@ -15,5 +15,4 @@ void clearLinkedList(LinkedList* pList) //노드 다 지우기 List만 남긴다.
         free(move);
         move = next;
     }
-    
 }

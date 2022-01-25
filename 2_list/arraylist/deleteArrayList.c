@@ -3,6 +3,6 @@
 
 void deleteArrayList(ArrayList* pList)
 {
-    clearArrayList(pList);
+    free(pList->pElement);
     free(pList);
 }

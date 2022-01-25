@@ -14,8 +14,6 @@ SRCS := main.c \
 		clearArrayList.c \
 		getArrayListLength.c\
 
-
-	
 OBJ_DIR := ./objs/
 OBJ_NAME := $(SRCS:.c=.o)
 OBJ := $(addprefix $(OBJ_DIR), $(OBJ_NAME))

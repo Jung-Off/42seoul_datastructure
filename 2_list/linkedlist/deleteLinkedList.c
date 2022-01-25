@@ -3,6 +3,5 @@
 void deleteLinkedList(LinkedList* pList)
 {
     clearLinkedList(pList);
-
     free(pList);
 }

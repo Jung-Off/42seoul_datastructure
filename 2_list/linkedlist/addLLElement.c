@@ -18,20 +18,11 @@ int addLLElement(LinkedList* pList, int position, ListNode element)
 	Nodetemp->pLink = element.pLink;
 
 	move = &(pList->headerNode);
-	//	1. 처음에 넣을 때
-	if (position == 0)
-	{
-		//	원소가 아무것도 없을 때
-		if (pList->headerNode.pLink == NULL)
-			pList->headerNode.pLink = Nodetemp;
-		//	원소가 있는데 넣을 때
-		else
-		{
-			Nodetemp->pLink = move->pLink;
-			move->pLink = Nodetemp;
-		}
-	}
-	//	2. 중간에 넣을 때 + 마지막에 넣을 때
+
+	// 붙어있는게 없을 때
+	if (pList->headerNode.pLink == NULL)
+		pList->headerNode.pLink = Nodetemp;
+	// 붙어있는게 있을 때
 	else
 	{
 		int pos = position;

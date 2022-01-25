@@ -8,14 +8,5 @@ ArrayListNode* getALElement(ArrayList* pList, int position)
         printf("not found\n");
         return (NULL);
     }
-    // ArrayListNode *temp;
-
-    // int i = 0;
-    // while(i < position)
-    // {
-    //     pList->pElement[i];
-    //     ++i;
-    // }
-    // temp = pList->pElement[i];
     return(&(pList->pElement[position]));
 }

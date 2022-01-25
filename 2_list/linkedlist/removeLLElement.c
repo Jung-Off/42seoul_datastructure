@@ -18,7 +18,7 @@ int removeLLElement(LinkedList* pList, int position)
         printf("List is empty");
         return (FALSE);
     }
-    // //	원소가 있는데 지울 때 
+    //	원소가 있는데 지울 때 
 	else
 	{
 		int pos = position;
