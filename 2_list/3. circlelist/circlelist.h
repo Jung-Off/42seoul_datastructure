@@ -16,14 +16,14 @@ typedef struct CircularListType
 	CircularListNode*   headerNode;		// 헤더 노드(Header Node)
 } CircularList;
 
-CircularList* createCircularList();
-void deleteCircularList(CircularList* pList);
-int addDLElement(CircularList* pList, int position, CircularListNode element);
-int removeDLElement(CircularList* pList, int position);
-void clearCircularList(CircularList* pList);
-int getCircularListLength(CircularList* pList);
-CircularListNode* getDLElement(CircularList* pList, int position);
-void displayCircularList(CircularList* pList);
+CircularList* createCircularList();	//
+void deleteCircularList(CircularList* pList); // 다지우기
+int addDLElement(CircularList* pList, int position, CircularListNode element);	//
+int removeDLElement(CircularList* pList, int position); //원소하나
+void clearCircularList(CircularList* pList);	//깔끔하게
+int getCircularListLength(CircularList* pList); //
+CircularListNode* getDLElement(CircularList* pList, int position); //
+void displayCircularList(CircularList* pList); //`
 
 #endif
 
