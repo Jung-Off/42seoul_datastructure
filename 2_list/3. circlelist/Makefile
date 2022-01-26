@@ -1,19 +1,12 @@
-NAME := arraylist
+NAME := circlelist
 
 CC := gcc
 CFLAGS := -Wall -Wextra -Werror
 
 SRCS := main.c \
-		createArrayList.c \
-		deleteArrayList.c \
-		isArrayListFull.c \
-		addALElement.c \
-		removeALElement.c \
-		getALElement.c \
-		displayArrayList.c \
-		clearArrayList.c \
-		getArrayListLength.c\
-
+		addDLElement.c \
+		createCircularList.c \
+	
 OBJ_DIR := ./objs/
 OBJ_NAME := $(SRCS:.c=.o)
 OBJ := $(addprefix $(OBJ_DIR), $(OBJ_NAME))
