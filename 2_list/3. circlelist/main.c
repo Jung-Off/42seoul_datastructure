@@ -29,25 +29,6 @@ void print_circle(CircularList *head)
     printf("\n\n");
 }
 
-CircularListNode* getDLElement(CircularList* pList, int position)
-{
-    if (position >= pList->currentElementCount || position < 0)
-    {
-        printf("not found\n");
-        return (NULL);
-    }
-
-    CircularListNode *move = pList->headerNode;
-
-    int pos = position;
-    while (pos > 0)
-    {
-        move = move->pRlink;
-        --pos;
-    }
-    return (move);
-}
-
 void print_command(void)
 {
     printf("1. add element\n");

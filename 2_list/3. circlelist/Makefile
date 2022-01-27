@@ -1,7 +1,7 @@
 NAME := circlelist
 
 CC := gcc
-# CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror
 
 SRCS := main.c \
 		addDLElement.c \
@@ -11,7 +11,7 @@ SRCS := main.c \
 		displayCircularList.c \
 		getCircularListLength.c \
 		removeDLElement.c \
-		# getDLElement.c
+		getDLElement.c
 	
 OBJ_DIR := ./objs/
 OBJ_NAME := $(SRCS:.c=.o)
