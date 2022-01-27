@@ -2,11 +2,8 @@
 
 void deleteCircularList(CircularList* pList)
 {
-    if (pList->headerNode == 0)
-    {
-        printf("empty!\n");
-        return ;
-    }
-    clearCircularList(pList);
+    printf("delete\n");
+    if (pList->headerNode != 0)
+        clearCircularList(pList);
     free(pList);
 }

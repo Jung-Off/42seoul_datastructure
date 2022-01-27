@@ -2,6 +2,8 @@
 
 void deleteLinkedList(LinkedList* pList)
 {
-    clearLinkedList(pList);
+    printf("delete\n");
+    if (pList->headerNode.pLink != NULL)
+        clearLinkedList(pList);
     free(pList);
 }

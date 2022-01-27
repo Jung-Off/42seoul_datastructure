@@ -3,6 +3,11 @@
 
 void clearArrayList(ArrayList* pList)
 {
+    if (pList->pElement == NULL)
+    {
+        printf("isempty !\n");
+        return ;
+    }
     int i = 0;
 
     while (i < pList->currentElementCount)

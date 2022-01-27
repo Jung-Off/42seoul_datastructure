@@ -3,6 +3,8 @@
 
 void deleteArrayList(ArrayList* pList)
 {
-    free(pList->pElement);
+    printf("delete\n");
+    if (pList->pElement != NULL)
+        free(pList->pElement);
     free(pList);
 }
