@@ -4,14 +4,14 @@ CC := gcc
 CFLAGS := -Wall -Wextra -Werror
 
 SRCS := main.c \
-		# addDLElement.c \
-		# createCircularList.c \
-		# deleteCircularList.c \
-		# clearCircularList.c \
-		# displayCircularList.c \
-		# getCircularListLength.c \
-		# removeDLElement.c \
-		# getDLElement.c
+		addDLElement.c \
+		createDoublyList.c \
+		deleteDoublyList.c \
+		clearDoublyList.c \
+		displayDoublyList.c \
+		getDoublyListLength.c \
+		removeDLElement.c \
+		getDLElement.c
 	
 OBJ_DIR := ./objs/
 OBJ_NAME := $(SRCS:.c=.o)
