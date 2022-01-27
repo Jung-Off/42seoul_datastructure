@@ -16,14 +16,14 @@ int removeDLElement(CircularList* pList, int position)
         CircularListNode* move = pList->headerNode;
         CircularListNode* temp = NULL;
 
-        if (position == 0)
+        if (position == 0)  //위치가 0
         {
-            if (pList->currentElementCount == 1)
+            if (pList->currentElementCount == 1)    //1개 일때
             {
                 pList->headerNode = NULL;
                 free(move);
             }   
-            else
+            else    //많을 때
             {
                 temp = move;
                 pList->headerNode = move->pRlink;
@@ -38,7 +38,7 @@ int removeDLElement(CircularList* pList, int position)
                 free(temp);
             }
         }
-        else
+        else    //위치가 1이상
         {
             //맨마지막거 지울 때 릭!
             int i = 0;
