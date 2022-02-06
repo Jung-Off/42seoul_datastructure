@@ -8,19 +8,19 @@
 
 // offset: x, y
 static int DIRECTION_OFFSETS[NUM_DIRECTIONS][2] = {
-	{0, -1},		// À§ÂÊÀ¸·Î ÀÌµ¿.
-	{1, 0},			// ¿À¸¥ÂÊÀ¸·Î ÀÌµ¿.
-	{0, 1},			// ¾Æ·¡ÂÊÀ¸·Î ÀÌµ¿.
-	{-1, 0}			// ¿ÞÂÊÀ¸·Î ÀÌµ¿.
+	{0, -1},		// ìœ„ìª½ìœ¼ë¡œ ì´ë™
+	{1, 0},			// ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì´ë™
+	{0, 1},			// ì•„ëž˜ìª½ìœ¼ë¡œ ì´ë™
+	{-1, 0}			// ì™¼ìª½ìœ¼ë¡œ ì´ë™
 };
 
 enum PosStatus { NOT_VISIT = 0, WALL = 1 , VISIT = 2  };
 
 typedef struct MapPositionType
 {
-	int x;				// ÇöÀç À§Ä¡ xÁÂÇ¥.
-	int y;				// ÇöÀç À§Ä¡ yÁÂÇ¥.
-	int direction;		// ´ÙÀ½ À§Ä¡·Î ÀÌµ¿ ¹æÇâ.
+	int x;				// í˜„ìž¬ ìœ„ì¹˜ xì¢Œí‘œ.
+	int y;				// í˜„ìž¬ ìœ„ì¹˜ yì¢Œí‘œ.
+	int direction;		// ë‹¤ìŒ ìœ„ì¹˜ë¡œ ì´ë™ ë°©í–¥ 
 } MapPosition;
 
 #endif
