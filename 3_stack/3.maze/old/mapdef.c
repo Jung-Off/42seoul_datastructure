@@ -46,6 +46,8 @@ void findPath(int mazeArray[HEIGHT][WIDTH],
 
     while(1){
         StackNode* pop = popLS(pStack);
+        
+        
         mazeArray[pop->data.y][pop->data.x] = VISIT;
         if (pop->data.x == endPos.x && pop->data.y == endPos.y)
         {
@@ -53,14 +55,15 @@ void findPath(int mazeArray[HEIGHT][WIDTH],
             foot_print(mazeArray, pStack);
             break;
         }
+        MapPosition able;
         for (int i = 0; i < 4; i++) {
             // 스택에 있는 x,y값 가져와서 dir offset 한 후의 위치가 이동가능하면 stack에 추가
-            MapPosition able;
             able.x = pop->data.x + DIRECTION_OFFSETS[i][0];
             able.y = pop->data.y + DIRECTION_OFFSETS[i][1];
             if (moveable(mazeArray, able.x, able.y))
                 pushLSMapPosition(pStack, able);
         }
+
         free(pop);
         foot_print(mazeArray, pStack);
     }
