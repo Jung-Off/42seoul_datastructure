@@ -6,21 +6,23 @@
 
 #define NUM_DIRECTIONS 4
 
+#include "linkedstack.h"
+
 // offset: x, y
 static int DIRECTION_OFFSETS[NUM_DIRECTIONS][2] = {
-	{0, -1},		// 위쪽으로 이동
-	{1, 0},			// 오른쪽으로 이동
-	{0, 1},			// 아래쪽으로 이동
-	{-1, 0}			// 왼쪽으로 이동
+	{0, -1},		// 위쪽으로 이동	0	
+	{-1, 0},			// 왼쪽으로 이동	3
+	{0, 1},			// 아래쪽으로 이동	2
+	{1, 0}			// 오른쪽으로 이동	1
 };
 
 enum PosStatus { NOT_VISIT = 0, WALL = 1 , VISIT = 2  };
 
-typedef struct MapPositionType
-{
-	int x;				// 현재 위치 x좌표.
-	int y;				// 현재 위치 y좌표.
-	int direction;		// 다음 위치로 이동 방향 
-} MapPosition;
+void findPath(int mazeArray[HEIGHT][WIDTH],
+		MapPosition startPos, MapPosition endPos, LinkedStack *pStack);
+int pushLSMapPosition(LinkedStack* pStack, MapPosition data);
+void printMaze(int mazeArray[HEIGHT][WIDTH]);
+
+// void showPath(LinkedStack *pStack, int mazeArray[HEIGHT][WIDTH]);
 
 #endif
