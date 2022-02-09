@@ -13,7 +13,6 @@ LinkedDeque* createLinkedDeque()
 	return (new);
 }
 
-
 int insertFrontLD(LinkedDeque* pDeque, DequeNode element)
 {
 	DequeNode *add = malloc(sizeof(DequeNode));
@@ -114,15 +113,15 @@ DequeNode* peekRearLD(LinkedDeque* pDeque)
 
 void deleteLinkedDeque(LinkedDeque* pDeque)
 {
-	DequeNode *cur;
-	DequeNode *del;
+	DequeNode *next;
+	DequeNode *curr;
 
-	cur = pDeque->pFrontNode;
-	while (cur)
+	curr = pDeque->pFrontNode;
+	while (curr)
 	{
-		del = cur;
-		free(del);
-		cur = cur->pRLink;
+		next = curr->pRLink;
+		free(curr);
+		curr = next;
 	}
 	free(pDeque);
 }
@@ -151,7 +150,6 @@ void	reversedisplay(LinkedDeque* pDeque)
 	DequeNode *cur;
 	
     printf("reversedisplay\n\n");
-    
 	cur = pDeque->pRearNode;
 	while (cur)
 	{

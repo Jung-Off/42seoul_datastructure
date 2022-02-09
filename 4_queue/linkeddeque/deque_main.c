@@ -16,9 +16,6 @@ int main()
 
         if (input == 1)
         {
-            // int max;
-            // printf("max size ! : ");
-            // scanf("%d", &max);
             head = createLinkedDeque();
             if (!head)
             {
