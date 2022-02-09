@@ -1,6 +1,9 @@
 #ifndef _ARRAY_QUEUE_
 #define _ARRAY_QUEUE_
 
+#include <stdlib.h>
+#include <stdio.h>
+
 typedef struct ArrayQueueNodeType
 {
 	char data;
@@ -23,6 +26,7 @@ void deleteArrayQueue(ArrayQueue* pQueue);
 int isArrayQueueFull(ArrayQueue* pQueue);
 int isArrayQueueEmpty(ArrayQueue* pQueue);
 
+void displayArrayQueue(ArrayQueue* pQueue);
 #endif
 
 #ifndef _COMMON_QUEUE_DEF_
