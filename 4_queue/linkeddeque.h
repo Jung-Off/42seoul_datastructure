@@ -1,6 +1,9 @@
 #ifndef _LINKED_DEQUE_
 #define _LINKED_DEQUE_
 
+#include <stdlib.h>
+#include <stdio.h>
+
 typedef struct DequeNodeType
 {
 	char data;
@@ -23,8 +26,11 @@ DequeNode* deleteRearLD(LinkedDeque* pDeque);
 DequeNode* peekFrontLD(LinkedDeque* pDeque);
 DequeNode* peekRearLD(LinkedDeque* pDeque);
 void deleteLinkedDeque(LinkedDeque* pDeque);
-int isLinkedDequeFull(LinkedDeque* pDeque);
+// int isLinkedDequeFull(LinkedDeque* pDeque);
 int isLinkedDequeEmpty(LinkedDeque* pDeque);
+
+void	reversedisplay(LinkedDeque* pDeque);
+void	displayDeque(LinkedDeque* pDeque);
 
 #endif
 
