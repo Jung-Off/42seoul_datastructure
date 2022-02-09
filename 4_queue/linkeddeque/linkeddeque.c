@@ -76,6 +76,7 @@ DequeNode* deleteFrontLD(LinkedDeque* pDeque)
         pDeque->pFrontNode = del->pRLink;
         del->pRLink = NULL;
     }
+	pDeque->currentElementCount--;
     return (del);
 }
 
@@ -98,6 +99,7 @@ DequeNode* deleteRearLD(LinkedDeque* pDeque)
 		pDeque->pRearNode = del->pLLink;
 		del->pLLink = NULL;
 	}
+	pDeque->currentElementCount--;
 	return (del);
 }
 
@@ -133,6 +135,11 @@ int isLinkedDequeEmpty(LinkedDeque* pDeque)
 
 void	displayDeque(LinkedDeque* pDeque)
 {
+	if (pDeque->pFrontNode == NULL)
+	{
+		printf("(NULL)\n");
+		return ;
+	}
     DequeNode *cur;
 
     printf("displayDeque\n\n");
@@ -147,6 +154,11 @@ void	displayDeque(LinkedDeque* pDeque)
 
 void	reversedisplay(LinkedDeque* pDeque)
 {
+	if (pDeque->pFrontNode == NULL)
+	{
+		printf("(NULL)\n");
+		return ;
+	}
 	DequeNode *cur;
 	
     printf("reversedisplay\n\n");

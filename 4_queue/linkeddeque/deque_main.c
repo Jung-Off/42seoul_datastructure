@@ -52,20 +52,22 @@ int main()
         }
         else if(input == 5)
         {
-            deleteFrontLD(head);
+            DequeNode* del = deleteFrontLD(head);
+            free(del);
             displayDeque(head);
             reversedisplay(head);
         }
         else if(input == 6)
         {
-            deleteRearLD(head);
+            DequeNode* del = deleteRearLD(head);
+            free(del);
             displayDeque(head);
             reversedisplay(head);
         }
         else if (input == 0)
         {
             printf("exit\n");
-            deleteArrayQueue(head);
+            deleteLinkedDeque(head);
             exit(0);
         }
     }
