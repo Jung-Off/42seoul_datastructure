@@ -5,7 +5,7 @@
 #include "linkeddeque.c"
 #include <sys/time.h>
 
-#define MAX_TIME 15
+#define MAX_TIME 5
 
 #define RED 	"\x1b[31m"
 #define GREEN 	"\x1b[32m"

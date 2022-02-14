@@ -25,9 +25,9 @@ typedef struct DequeNodeType
 
 typedef struct LinkedDequeType
 {
-	int currentElementCount;	// ÇöÀç ¿ø¼ÒÀÇ °³¼ö
-	DequeNode* pFrontNode;		// Front ³ëµåÀÇ Æ÷ÀÎÅÍ
-	DequeNode* pRearNode;		// Rear ³ëµåÀÇ Æ÷ÀÎÅÍ
+	int currentElementCount;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	DequeNode* pFrontNode;		// Front ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	DequeNode* pRearNode;		// Rear ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 } LinkedDeque;
 
 LinkedDeque* createLinkedDeque();

@@ -19,10 +19,12 @@ void processArrival(int currentTime, LinkedDeque *pArrivalQueue, LinkedDeque *pW
     
     temp = deleteFrontLD(pArrivalQueue);
     insertRearLD(pWaitQueue, *temp);
+    free(temp);
 }
 
 DequeNode* processServiceNodeStart(int currentTime, LinkedDeque *pWaitQueue)
 {
+    // printf("processServiceNodeStart\n");
     DequeNode *ret;
 
     if (pWaitQueue->pFrontNode == NULL)
@@ -40,9 +42,10 @@ DequeNode* processServiceNodeStart(int currentTime, LinkedDeque *pWaitQueue)
 
 DequeNode* processServiceNodeEnd(int currentTime, DequeNode *pServiceNode, int *pServiceUserCount, int *pTotalWaitTime)
 {
+    // printf("processServiceNodeEnd\n");
     (*pServiceUserCount)++;
     pServiceNode->data.status = end;
-    (*pTotalWaitTime) += pServiceNode->data.startTime - pServiceNode->data.arrivalTime;
+    (*pTotalWaitTime) += (pServiceNode->data.startTime - pServiceNode->data.arrivalTime);
     free(pServiceNode);
     return (NULL);
 }
@@ -75,7 +78,7 @@ void printReport(LinkedDeque *pWaitQueue,int serviceUserCount, int totalWaitTime
     printf(YELLOW"\n=== printReport ===\n"RESET);
     printf("user count : %d , wait time : %d\n", serviceUserCount, totalWaitTime);
 
-    displayDeque(pWaitQueue);
+    // displayDeque(pWaitQueue);
 }
 
 void printSimCustomer(int currentTime, SimCustomer customer)
@@ -111,10 +114,11 @@ int main()
     int arrivalTime = 0;
     int serviceTime = 0;
 
-	while (1)
+	for(int i = 0; i < MAX_TIME; i++)
 	{
         //1초에 두명이상은 받을 수 없다!
         printf("--------------------------------\n");
+        printf(RED"We are open until %d\n"RESET, MAX_TIME);
         printf("current time : [%d]\n", currentTime);
         int select = come_here();
         if (select == 1)
@@ -154,10 +158,7 @@ int main()
             if (service && currentTime == service->data.endTime)
                 service = processServiceNodeEnd(currentTime, service, &pServiceUserCount, &pTotalWaitTime);
             if (!service)
-            {
-                printf("rewaraewraew\n");
                 service = processServiceNodeStart(currentTime, waitqueue);
-            }
             if (service)
                 printSimCustomer(currentTime, service->data);
             else
@@ -165,7 +166,7 @@ int main()
                 printf(RED"=== now service node ===\n"RESET);
                 printf("(NULL)");
             }
-            printWaitQueueStatus(currentTime, waitqueue); 
+            printWaitQueueStatus(currentTime, waitqueue);
             currentTime++;
             printReport(waitqueue, pServiceUserCount, pTotalWaitTime);
         }
@@ -175,5 +176,9 @@ int main()
             exit(1);
 	    }
     }
-    // printReport(waitqueue, pServiceUserCount, pTotalWaitTime);
+    printf("\n=====================\n");
+    printf(RED"end of business\n"RESET);
+    printf("\nnow current time is %d\n", MAX_TIME);
+    printf("=====================\n");
+    printReport(waitqueue, pServiceUserCount, pTotalWaitTime);
 }
