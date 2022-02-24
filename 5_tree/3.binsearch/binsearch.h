@@ -22,16 +22,15 @@ typedef struct BinTreeType
 
 BinTree* makeBinTree(BinTreeNode rootNode); 
 BinTreeNode* getRootNodeBT(BinTree* pBinTree);
-
-BinTreeNode* insertNode(BinTree* tree, BinTreeNode element);
+BinTreeNode* newNode(char key);
+BinTreeNode* insertNode(BinTreeNode *node, char key);
+// BinTreeNode* insertNode(BinTree* tree, BinTreeNode element);
 //>> insert만
 BinTreeNode* getLeftChildNodeBT(BinTreeNode* pNode);
 BinTreeNode* getRightChildNodeBT(BinTreeNode* pNode);
-
-void deleteBinTree(BinTree* pBinTree);
-//중간거 빼기 가능!
-BinTreeNode* deleteBinTreeNode(BinTree* pBinTree, char key);
-
+void deleteBinTree(BinTree** pBinTree); //중간거 빼기 가능!
+BinTreeNode* deleteBinTreeNode(BinTreeNode* pNode, char key);
+void clearBinTreeNode(BinTreeNode* pNode);
 void printNode(BinTreeNode* node);
 BinTreeNode* findNode(BinTree *node, char data);
 void printTree(BinTree* tree);
